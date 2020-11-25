@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+import org.testng.annotations.AfterTest;
 
 import pageobjects.landingpage;
 import resources.Baseclass;
@@ -34,6 +35,13 @@ public class Homepage extends Baseclass {
 		lp.findjobs().click();
 		
 		
+	}
+	
+	@AfterTest
+	public void teardown()
+	{
+		
+		driver.close();
 	}
 	
 	@DataProvider
